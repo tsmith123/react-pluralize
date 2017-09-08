@@ -1,5 +1,5 @@
 # React Pluralize
-This tiny React component makes it really easy to pluralize (and singularize) words. It doesn't rely on a library of singular/plural forms because you provide the correct translation from within the component.
+This tiny React component makes it really easy to pluralize words. It doesn't rely on a library of singular/plural forms because you provide the correct translation from within the component.
 
 ## Install
     npm i -S react-pluralize
@@ -12,5 +12,23 @@ This tiny React component makes it really easy to pluralize (and singularize) wo
     <Pluralize singular="sheep" plural="sheep" count={3} /> => 3 sheep
     <Pluralize singular="like" /> => 1 like
 
+    // Dyanmic Updating
+    // If count prop is provided with a value that changes during runtime then the output changes accordingly
+
+    // this.state.count = 1
+    <Pluralize singular="hit" count={this.state.count} /> => 1 hit
+
+    // this.state.count = 2
+    <Pluralize singular="hit" count={this.state.count} /> => 2 hits
+
 ## Props
-`react-pluralize` accepts three props; **singular** is required and an error will be thrown if not provided, **plural** is optional and should be used when it's an irregular plural form. For example, the plural form of the word "person" is "people" so the **plural** prop should be provided. The third prop is **count** and is also optional. If not provided, it defaults to 1.
+
+**singular** (required)
+Provide the singular form of the noun
+
+**plural** (optional)
+Most nouns are pluralized by adding an "s" to the end of the noun (in the English language) but if this isn't the case then you need to provide the plural form as a prop value. For example, if the noun (singular) is "person" then the provide "people" as the value.
+
+**count** (optional but recommended)
+If you don't provide a count prop value then a default value of 1 is used.
+To take advantage of dynamic updating, you should include this prop.
