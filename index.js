@@ -11,9 +11,6 @@ export default class Pluralize extends React.Component {
     count: 1,
   }
 
-  isMtd: false
-  text: ""
-
   constructor() {
     super()
 
@@ -23,35 +20,33 @@ export default class Pluralize extends React.Component {
   }
 
   componentDidMount () {
-    this.isMtd = true
-
-    // do the thing
     this.pluralize(this.props)
   }
 
-  componentWillUnmount () {
-    this.isMtd = false
+  // update text if count prop changes
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.count !== this.props.count) {
+      this.pluralize(nextProps)
+    }
   }
 
-  pluralize(props) {
-    const { singular, count } = this.props
-    let { plural } = this.props
+  pluralize(data) {
+    let text = "";
+    let { singular, plural, count } = data
 
+    // if not specified then use standard plural ending
     if(!plural) {
       plural = singular + "s"
     }
 
-    if(count === 1 ) {
-      this.text = singular
-    } else {
-      this.text = plural
-    }
+    // set correct ending to text
+    count === 1 ? text = singular : text = plural
 
-    this.setState({text: this.text})
+    // update state
+    this.setState({text: text})
   }
 
   render() {
-
     const { count } = this.props
     const { text } = this.state
 
