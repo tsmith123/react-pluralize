@@ -27,7 +27,7 @@ This tiny React component makes it really easy to pluralize words. It doesn't re
 Provide the singular form of the noun
 
 **plural** (optional)
-Most nouns are pluralized by adding an "s" to the end of the noun (in the English language) but if this isn't the case then you need to provide the plural form as a prop value. For example, if the noun (singular) is "person" then the provide "people" as the value.
+In the English language most nouns are pluralized by adding an "s" to the end but if this isn't the case then you need to provide the irregular plural form as a prop value. For example, if the noun (singular) is "person" then provide "people" as the value.
 
 **count** (optional but recommended)
 If you don't provide a count prop value then a default value of 1 is used.
