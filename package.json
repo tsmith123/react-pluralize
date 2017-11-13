@@ -1,6 +1,6 @@
 {
   "name": "react-pluralize",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Display plural or singular form of a word based on a count",
   "main": "./dist/bundle.js",
   "scripts": {
