@@ -25,6 +25,9 @@
     "babel-preset-stage-0": "^6.3.13",
     "webpack": "^2.5.1"
   },
+  "optionalDependencies": {
+    "pluralize": ">= 7.0.0"
+  },
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.5.4"

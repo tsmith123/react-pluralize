@@ -5,19 +5,35 @@ React Pluralize (MIT)
 import React from 'react';
 import PropTypes from 'prop-types';
 
+let pluralize ;
+try {
+  pluralize = require('pluralize');
+} catch (e) {
+  pluralize = (word, count, inclusive) => {
+    const pluralized = count === 1 ? word : `${word}s`;
+    return inclusive ? `${count} ${pluralized}` : pluralized;
+  };
+}
+
 export default class Pluralize extends React.Component {
   static displayName = 'Pluralize';
+
+  static propTypes = {
+    singular: PropTypes.string.isRequired,
+    plural: PropTypes.string,
+    count: PropTypes.number,
+    showCount: PropTypes.bool,
+  };
+
   static defaultProps = {
     count: 1,
     showCount: true,
-  }
+  };
 
   constructor() {
     super();
 
-    this.state = {
-      output: ""
-    }
+    this.state = { text: '' };
   }
 
   componentDidMount () {
@@ -31,37 +47,27 @@ export default class Pluralize extends React.Component {
     }
   }
 
-  pluralize(data) {
-    let text = "";
-    let { singular, plural, count, showCount } = data;
+  pluralize(props) {
+    const { singular, plural, count, showCount } = props;
+    const useCustomPlural = plural && count !== 1;
+    let text;
 
-    // if not specified then use standard plural ending
-    if(!plural) {
-      plural = singular + "s";
+    if (useCustomPlural && showCount) {
+      text = `${count} ${plural}`;
+    } else if (useCustomPlural && !showCount) {
+      text = plural;
+    } else {
+      text = pluralize(singular, count, showCount);
     }
 
-    // set correct ending to text
-    count === 1 ? text = singular : text = plural
-    if(showCount) {
-      text = String(count) + " " + text;
-    }
-
-    // update state
-    this.setState({text: text})
+    this.setState({ text })
   }
 
   render() {
-    const { text } = this.state
+    const { text } = this.state;
 
     return (
       <span>{text}</span>
     )
   }
-}
-
-Pluralize.propTypes = {
-  singular: PropTypes.string.isRequired,
-  plural: PropTypes.string,
-  count: PropTypes.number,
-  showCount: PropTypes.bool,
 }
