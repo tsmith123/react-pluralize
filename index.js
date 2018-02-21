@@ -10,6 +10,8 @@ export default class Pluralize extends React.Component {
   static defaultProps = {
     count: 1,
     showCount: true,
+    className: "",
+    style: {}
   }
 
   constructor() {
