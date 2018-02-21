@@ -65,5 +65,5 @@ Pluralize.propTypes = {
   count: PropTypes.number,
   showCount: PropTypes.bool,
   className: PropsTypes.string,
-  style: PropTYpes.object,
+  style: PropTypes.object,
 }
