@@ -41,4 +41,4 @@ The following props can be provided to style the appearance of the output.
 
 **className** (optional)(String)
 
-**style** (optional)(String)
+**style** (optional)(Object)
