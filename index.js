@@ -54,7 +54,7 @@ export default class Pluralize extends React.Component {
     const { text } = this.state
 
     return (
-      <span>{text}</span>
+      <span className={ this.props.className } style={ this.props.style }>{text}</span>
     )
   }
 }
@@ -64,4 +64,6 @@ Pluralize.propTypes = {
   plural: PropTypes.string,
   count: PropTypes.number,
   showCount: PropTypes.bool,
+  className: PropsTypes.string,
+  style: PropTYpes.object,
 }
