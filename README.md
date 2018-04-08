@@ -25,19 +25,24 @@ This tiny React component makes it really easy to pluralize words. It doesn't re
 ## Props
 
 **singular** (required)(String)
+
 Provide the singular form of the noun
 
 **plural** (optional)(String)
+
 In the English language most nouns are pluralized by adding an "s" to the end but if this isn't the case then you need to provide the irregular plural form as a prop value. For example, if the noun (singular) is "person" then provide "people" as the value.
 
 **count** (optional but recommended)(default: 1)(Number)
+
 If you don't provide a count prop value then a default value of 1 is used.
 To take advantage of dynamic updating, you should include this prop.
 
 **showCount** (optional)(default: true)(Boolean)
+
 If you would prefer not to see the count in the output then set this prop to false.
 
-The following props can be provided to style the appearance of the output.
+
+The component also accepts `className` and `style` should you wish to style the appearance of the output.
 
 **className** (optional)(String)
 
