@@ -36,3 +36,9 @@ To take advantage of dynamic updating, you should include this prop.
 
 **showCount** (optional)(default: true)(Boolean)
 If you would prefer not to see the count in the output then set this prop to false.
+
+The following props can be provided to style the appearance of the output.
+
+**className** (optional)(String)
+
+**style** (optional)(Object)
