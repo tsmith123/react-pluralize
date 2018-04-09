@@ -1,4 +1,6 @@
 dist
 node_modules
+
 npm-debug.log
 webpack.config.js
+.eslintrc.json

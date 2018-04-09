@@ -32,13 +32,13 @@ export default class Pluralize extends React.Component {
       this.pluralize(nextProps);
     }
   }
-
+  
   pluralize(data) {
     let text = "";
     let { singular, plural, count, showCount } = data;
 
     // if not specified then use standard plural ending
-    if(!plural) {
+    if (!plural) {
       plural = singular + "s";
     }
 
