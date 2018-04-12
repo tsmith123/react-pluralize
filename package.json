@@ -1,37 +1,22 @@
 {
   "name": "react-pluralize",
   "version": "1.2.3",
-  "description": "Display plural or singular form of a word based on a count",
-  "main": "./dist/bundle.js",
+  "description": "Render nouns in singular or plural form",
+  "main": "build/index.js",
+  "dependencies": {
+    "react": "^15.5.4",
+    "webpack": "^2.6.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tsmith123/react-pluralize.git"
+  "author": {
+    "name": "Tom Smith"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tsmith123/react-pluralize/issues"
-  },
-  "homepage": "https://github.com/tsmith123/react-pluralize#readme",
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-transform-class-properties": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "webpack": "^2.5.1"
-  },
-  "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1"
   }
 }
