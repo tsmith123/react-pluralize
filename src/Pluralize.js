@@ -7,22 +7,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Pluralize extends Component {
-  static propTypes = {
-    singular: PropTypes.string.isRequired,
-    plural: PropTypes.string,
-    count: PropTypes.number,
-    showCount: PropTypes.bool,
-    className: PropTypes.string,
-    style: PropTypes.object,
-  }
-
-  static defaultProps = {
-    count: 1,
-    showCount: true,
-    className: null,
-    style: {},
-  }
-
   pluralize(singular, plural, count, showCount) {
     let output = singular;
 
@@ -51,6 +35,22 @@ class Pluralize extends Component {
       </span>
     );
   }
+}
+
+Pluralize.propTypes = {
+  singular: PropTypes.string.isRequired,
+  plural: PropTypes.string,
+  count: PropTypes.number,
+  showCount: PropTypes.bool,
+  className: PropTypes.string,
+  style: PropTypes.object,
+}
+
+Pluralize.defaultProps = {
+  count: 1,
+  showCount: true,
+  className: null,
+  style: {},
 }
 
 export default Pluralize;
