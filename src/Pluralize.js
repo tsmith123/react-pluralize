@@ -1,6 +1,6 @@
 /*
  * React Pluralize (MIT)
- * Author: Tom Smith (https://github.com/tsmith123)
+ * Tom Smith (https://github.com/tsmith123)
  */
 
 import React, { Component } from 'react';
@@ -14,7 +14,7 @@ class Pluralize extends Component {
       output = plural || `${singular}s`;
     }
 
-    return showCount ? `${count} ${output}` : output
+    return showCount ? `${count} ${output}` : output;
   }
 
   render() {
