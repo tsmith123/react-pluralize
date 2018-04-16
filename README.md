@@ -1,5 +1,5 @@
 # React Pluralize
-A tiny React component that pluralizes English nouns such as **like(s)**, **view(s)** and **hit(s)**.
+A tiny pluralization component. 
 
 ## Install
     npm install react-pluralize --save
