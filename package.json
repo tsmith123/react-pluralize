@@ -4,6 +4,7 @@
   "description": "Render nouns in singular or plural form",
   "main": "build/index.js",
   "repository": "https://github.com/tsmith123/react-pluralize",
+  "licence": "MIT",
   "dependencies": {
     "react": "^15.5.4"
   },
