@@ -11,6 +11,8 @@ A tiny pluralization component.
     <Pluralize singular="view" count={3} /> => 3 views
     <Pluralize singular="person" plural="people" count={3} /> => 3 people
     <Pluralize singular="like" showCount={false}/> => like
+    <Pluralize singular="click" count={0} /> => 0 clicks
+    <Pluralize singular="hit" count={0} zero={'Nothing to show'}/> => Nothing to show
 
 ## Props
 
@@ -26,6 +28,9 @@ The count value used to determine whether the singular or plural form should be 
 **showCount** (optional)(default: true)(Boolean)
 If you would prefer not to see the count in the output then set this prop to false.
 
-**className** (optional)(String)
+**zero** (optional)(default: null)(String)
+If you would like to show a different message when the count is 0 you can provide this prop.
 
-**style** (optional)(Object)
+**className** (optional)(default: null)(String)
+
+**style** (optional)(default: {})(Object)
