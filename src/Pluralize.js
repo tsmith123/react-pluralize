@@ -7,7 +7,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Pluralize extends Component {
-  pluralize(singular, plural, count, showCount) {
+  pluralize(singular, plural, count, showCount, zero) {
+    if(count === 0 && zero) {
+      return zero;
+    }
+
     let output = singular;
 
     if(count !== 1) {
@@ -25,9 +29,10 @@ class Pluralize extends Component {
       showCount,
       className,
       style,
+      zero
     } = this.props;
-
-    const output = this.pluralize(singular, plural, count, showCount);
+    
+    const output = this.pluralize(singular, plural, count, showCount, zero);
 
     return (
       <span className={className} style={style}>
@@ -44,6 +49,7 @@ Pluralize.propTypes = {
   showCount: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object,
+  zero: PropTypes.string
 }
 
 Pluralize.defaultProps = {
@@ -51,6 +57,7 @@ Pluralize.defaultProps = {
   showCount: true,
   className: null,
   style: {},
+  zero: null
 }
 
 export default Pluralize;
