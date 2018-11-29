@@ -1,3 +1,5 @@
-import { pluralise } from './utils'
+import { pluralize } from './utils'
 
-export { pluralise }
+export {
+  pluralize
+}

@@ -1,16 +1,16 @@
-import { pluralise } from './utils'
+import { pluralize } from './utils'
 
-describe('pluralise function correctly pluralises strings', () => {
-  test('a regular verb is pluralised', () => {
+describe('pluralize function correctly pluralizes strings', () => {
+  test('a regular verb is pluralized', () => {
     const singular = 'hit'
-    const result = pluralise({ singular })
+    const result = pluralize({ singular })
     expect(result).toBe('hits')
   })
 
-  test('an irregular verb is pluralised', () => {
+  test('an irregular verb is pluralized', () => {
     const singular = 'person'
     const plural = 'people'
-    const result = pluralise({ singular, plural })
+    const result = pluralize({ singular, plural })
     expect(result).toBe('people')
   })
 
@@ -18,7 +18,7 @@ describe('pluralise function correctly pluralises strings', () => {
     const singular = 'cat'
     const count = 3
     const showCount = true
-    const result = pluralise({ singular, count, showCount })
+    const result = pluralize({ singular, count, showCount })
     expect(result).toBe(`${count} cats`)
   })
 })

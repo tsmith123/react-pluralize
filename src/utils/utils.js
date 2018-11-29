@@ -1,4 +1,4 @@
-export const pluralise = ({ singular, plural, count, showCount, zero }) => {
+export const pluralize = ({ singular, plural, count, showCount, zero }) => {
   if (count === 0 && zero) return zero
 
   let output = singular
