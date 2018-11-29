@@ -7,13 +7,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { pluralize } from './utils'
 
-const Pluralize = ({ className, style, ...props }) => (
+const Plural = ({ className, style, ...props }) => (
   <span className={className} style={style}>
     {pluralize(props)}
   </span>
 )
 
-Pluralize.propTypes = {
+Plural.propTypes = {
   singular: PropTypes.string.isRequired,
   plural: PropTypes.string,
   count: PropTypes.number,
@@ -23,7 +23,7 @@ Pluralize.propTypes = {
   zero: PropTypes.string
 }
 
-Pluralize.defaultProps = {
+Plural.defaultProps = {
   count: 1,
   showCount: true,
   className: null,
@@ -31,4 +31,4 @@ Pluralize.defaultProps = {
   zero: null
 }
 
-export default Pluralize
+export default Plural
