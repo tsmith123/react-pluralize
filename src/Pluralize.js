@@ -3,44 +3,15 @@
  * Tom Smith (https://github.com/tsmith123)
  */
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { pluralize } from './utils'
 
-class Pluralize extends Component {
-  pluralize(singular, plural, count, showCount, zero) {
-    if(count === 0 && zero) {
-      return zero;
-    }
-
-    let output = singular;
-
-    if(count !== 1) {
-      output = plural || `${singular}s`;
-    }
-
-    return showCount ? `${count} ${output}` : output;
-  }
-
-  render() {
-    const {
-      singular,
-      plural,
-      count,
-      showCount,
-      className,
-      style,
-      zero
-    } = this.props;
-    
-    const output = this.pluralize(singular, plural, count, showCount, zero);
-
-    return (
-      <span className={className} style={style}>
-        {output}
-      </span>
-    );
-  }
-}
+const Pluralize = ({ className, style, ...props }) => (
+  <span className={className} style={style}>
+    {pluralize(props)}
+  </span>
+)
 
 Pluralize.propTypes = {
   singular: PropTypes.string.isRequired,
@@ -60,4 +31,4 @@ Pluralize.defaultProps = {
   zero: null
 }
 
-export default Pluralize;
+export default Pluralize

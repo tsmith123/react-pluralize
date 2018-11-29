@@ -1,3 +1,1 @@
-import Pluralize from './Pluralize';
-
-export default Pluralize;
+export { default } from './Pluralize'
