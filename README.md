@@ -8,11 +8,11 @@ A tiny pluralization component.
     import Pluralize from 'react-pluralize'
 
 ## Use
-    <Pluralize singular="view" count={3} /> => 3 views
-    <Pluralize singular="person" plural="people" count={3} /> => 3 people
-    <Pluralize singular="like" showCount={false}/> => like
-    <Pluralize singular="click" count={0} /> => 0 clicks
-    <Pluralize singular="hit" count={0} zero={'Nothing to show'}/> => Nothing to show
+    <Pluralize singular={'view'} count={3} /> => 3 views
+    <Pluralize singular={'person'} plural={'people'} count={3} /> => 3 people
+    <Pluralize singular={'like'} showCount={false}/> => like
+    <Pluralize singular={'click'} count={0} /> => 0 clicks
+    <Pluralize singular={'hit'} count={0} zero={'Nothing to show'}/> => Nothing to show
 
 ## Props
 
