@@ -9,6 +9,8 @@
     "react": "^15.5.4"
   },
   "scripts": {
+    "build": "WEBPACK_ENV=build webpack",
+    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "test": "jest"
   },
   "author": {

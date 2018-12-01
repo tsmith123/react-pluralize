@@ -5,11 +5,11 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { pluralize } from './utils'
+// import { pluralize } from './utils'
 
 const Plural = ({ className, style, ...props }) => (
   <span className={className} style={style}>
-    {pluralize(props)}
+    Test {/* {pluralize(props)} */}
   </span>
 )
 
