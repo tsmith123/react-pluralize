@@ -7,11 +7,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { pluralize } from './utils'
 
-const Plural = ({ className, style, ...props }) => (
-  <span className={className} style={style}>
-    {pluralize(props)}
-  </span>
-)
+const Plural = ({ className, style, ...props }) => {
+  return (
+    className || (style && style !== {})
+      ? (
+        <span className={className} style={style}>
+          {pluralize(props)}
+        </span>
+      ) : (
+        pluralize(props)
+      ))
+}
 
 Plural.propTypes = {
   singular: PropTypes.string.isRequired,
