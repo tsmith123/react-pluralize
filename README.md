@@ -1,5 +1,5 @@
 # React Pluralize
-A tiny pluralization component. 
+A tiny pluralization component. Also check out [react-since](https://www.npmjs.com/package/react-since), another tiny component that presents time passed in a humanistic format.
 
 ## Install
     npm install react-pluralize --save
