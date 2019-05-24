@@ -1,6 +1,6 @@
 {
   "name": "react-pluralize",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Render nouns in singular or plural form",
   "main": "dist/index.js",
   "scripts": {
