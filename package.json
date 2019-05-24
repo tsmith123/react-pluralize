@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src -d dist",
-    "prepublishOnly": "npm run transpile"
+    "build": "webpack --config ./webpack.config.js",
+    "prepublishOnly": "rm -rf ./dist && npm run build"
   },
   "author": "Tom Smith",
   "license": "MIT",
@@ -26,7 +26,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.3.0",
     "standard": "^12.0.1",
-    "webpack": "^4.5.0"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.3.2"
   },
   "standard": {
     "parser": "babel-eslint",
