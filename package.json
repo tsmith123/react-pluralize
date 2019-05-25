@@ -10,6 +10,10 @@
   },
   "author": "Tom Smith",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsmith123/react-pluralize"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.3.0"
