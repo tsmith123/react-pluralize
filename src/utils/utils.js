@@ -6,5 +6,5 @@ export const pluralize = ({ singular, plural, count, showCount, zero }) => {
     output = plural || `${singular}s`
   }
 
-  return showCount ? `${count} ${output}` : output
+  return showCount ? `${count.toLocaleString()} ${output}` : output
 }
