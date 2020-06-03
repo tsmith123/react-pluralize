@@ -3,32 +3,38 @@
  * Tom Smith (https://github.com/tsmith123)
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { pluralize } from './utils'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { pluralize } from './utils';
 
-const Plural = ({ className, style, ...props }) => (
-  <span className={className} style={style}>
-    {pluralize(props)}
-  </span>
-)
+
+const Plural = ({ className, style, tag: Tag, ...props }) =>
+  Tag ? (
+    <Tag className={className} style={style}>
+      {pluralize(props)}
+    </Tag>
+  ) : (
+    pluralize(props)
+  );
 
 Plural.propTypes = {
-  singular: PropTypes.string.isRequired,
-  plural: PropTypes.string,
-  count: PropTypes.number,
-  showCount: PropTypes.bool,
   className: PropTypes.string,
+  count: PropTypes.number,
+  plural: PropTypes.string,
+  showCount: PropTypes.bool,
+  singular: PropTypes.string.isRequired,
   style: PropTypes.object,
+  tag: PropTypes.string,
   zero: PropTypes.string
-}
+};
 
 Plural.defaultProps = {
+  className: null,
   count: 1,
   showCount: true,
-  className: null,
-  style: {},
+  style: null,
+  tag: 'span',
   zero: null
-}
+};
 
-export default Plural
+export default Plural;
