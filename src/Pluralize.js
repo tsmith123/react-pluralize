@@ -7,32 +7,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { pluralize } from './utils';
 
-const Plural = ({ className, style, ...props }) =>
-  textOnly ? (
-    pluralize(props)
-  ) : (
-    <span className={className} style={style}>
+
+const Plural = ({ className, style, tag: Tag, ...props }) =>
+  Tag ? (
+    <Tag className={className} style={style}>
       {pluralize(props)}
-    </span>
+    </Tag>
+  ) : (
+    pluralize(props)
   );
 
 Plural.propTypes = {
-  singular: PropTypes.string.isRequired,
-  plural: PropTypes.string,
-  count: PropTypes.number,
-  showCount: PropTypes.bool,
-  textOnly: PropTypes.bool,
   className: PropTypes.string,
+  count: PropTypes.number,
+  plural: PropTypes.string,
+  showCount: PropTypes.bool,
+  singular: PropTypes.string.isRequired,
   style: PropTypes.object,
+  tag: PropTypes.string,
   zero: PropTypes.string
 };
 
 Plural.defaultProps = {
+  className: null,
   count: 1,
   showCount: true,
-  textOny: false,
-  className: null,
-  style: {},
+  style: null,
+  tag: 'span',
   zero: null
 };
 
